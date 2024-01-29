@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 
 public class Task1 {
 
+    private static final Random random = new Random();
+
     //Task 1.1
     public static void printStreamNumbers(){
         Stream<Integer> stream = Stream.of(1,2,3,4,5,6,7,8,9);
@@ -16,7 +18,7 @@ public class Task1 {
 
     //Task 1.2
     public static List<Integer> generateRandomNumbers(){
-        Stream<Integer> randomNumbers = Stream.generate(() -> new Random().nextInt(100))
+        Stream<Integer> randomNumbers = Stream.generate(() -> random.nextInt(100))
                 .limit(20);
         return randomNumbers.collect(Collectors.toList());
     }

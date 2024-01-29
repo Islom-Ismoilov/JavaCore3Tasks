@@ -2,6 +2,7 @@ package TasksJavaCore3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,7 @@ public class Task2 {
         return inputList.stream()
                 .filter(filteredValues -> filteredValues.startsWith("c"))
                 .map(String::toUpperCase)
-                .sorted((sortedInDescOrder1, sortedInDescOrder2) -> sortedInDescOrder2.compareTo(sortedInDescOrder1))
+                .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
     }
 
